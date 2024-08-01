@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Media</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML5 Media</h1>
+        <nav>
+            <ul>
+                <li><a href="Canvas.html">Previous Topic: Canvas in HTML5</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Introduction to CSS3.html">Next Topic: Introduction to CSS3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Introduction to HTML5 Media</h2>
+        <p>HTML5 introduces new elements and attributes that make it easier to include media such as audio and video content in web pages. These elements provide a standardized way to embed media, making it more accessible and providing better control over playback and customization.</p>
+
+        <h3>HTML5 Audio Element</h3>
+        <p>The <code>&lt;audio&gt;</code> element is used to embed sound content in a web page. It supports multiple audio formats and provides built-in controls for playback.</p>
+        <pre><code>&lt;audio controls&gt;
+  &lt;source src="audio-file.mp3" type="audio/mpeg"&gt;
+  &lt;source src="audio-file.ogg" type="audio/ogg"&gt;
+  Your browser does not support the audio element.
+&lt;/audio&gt;</code></pre>
+
+        <h3>HTML5 Video Element</h3>
+        <p>The <code>&lt;video&gt;</code> element is used to embed video content in a web page. It supports multiple video formats and provides built-in controls for playback.</p>
+        <pre><code>&lt;video controls width="600"&gt;
+  &lt;source src="video-file.mp4" type="video/mp4"&gt;
+  &lt;source src="video-file.ogg" type="video/ogg"&gt;
+  Your browser does not support the video element.
+&lt;/video&gt;</code></pre>
+
+        <h3>HTML5 Source Element</h3>
+        <p>The <code>&lt;source&gt;</code> element allows you to specify multiple media sources for the <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> elements. This ensures that the media can be played in various formats, providing better compatibility across different browsers.</p>
+        <pre><code>&lt;video controls&gt;
+  &lt;source src="video-file.mp4" type="video/mp4"&gt;
+  &lt;source src="video-file.ogg" type="video/ogg"&gt;
+&lt;/video&gt;</code></pre>
+
+        <h3>HTML5 Track Element</h3>
+        <p>The <code>&lt;track&gt;</code> element is used to specify text tracks for <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> elements. This includes subtitles, captions, and descriptions.</p>
+        <pre><code>&lt;video controls&gt;
+  &lt;source src="video-file.mp4" type="video/mp4"&gt;
+  &lt;track src="subtitles-en.vtt" kind="subtitles" srclang="en" label="English"&gt;
+  &lt;track src="subtitles-es.vtt" kind="subtitles" srclang="es" label="Spanish"&gt;
+&lt;/video&gt;</code></pre>
+
+        <h3>Attributes and Controls</h3>
+        <p>The <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> elements support several attributes that provide control over playback:</p>
+        <ul>
+            <li><strong>controls:</strong> Adds default playback controls to the media element.</li>
+            <li><strong>autoplay:</strong> Automatically starts playback as soon as the media is ready.</li>
+            <li><strong>loop:</strong> Causes the media to loop back to the start after reaching the end.</li>
+            <li><strong>muted:</strong> Mutes the audio output.</li>
+            <li><strong>preload:</strong> Specifies if and how the author thinks the media should be loaded when the page loads (values: none, metadata, auto).</li>
+        </ul>
+
+        <h3>Browser Support and Compatibility</h3>
+        <p>HTML5 media elements are widely supported in modern browsers, but it's important to provide multiple source formats to ensure compatibility:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Browser</th>
+                    <th>Audio Formats</th>
+                    <th>Video Formats</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Chrome</td>
+                    <td>MP3, Ogg, WAV</td>
+                    <td>MP4, WebM, Ogg</td>
+                </tr>
+                <tr>
+                    <td>Firefox</td>
+                    <td>MP3, Ogg, WAV</td>
+                    <td>MP4, WebM, Ogg</td>
+                </tr>
+                <tr>
+                    <td>Safari</td>
+                    <td>MP3, WAV</td>
+                    <td>MP4</td>
+                </tr>
+                <tr>
+                    <td>Edge</td>
+                    <td>MP3, WAV</td>
+                    <td>MP4, WebM</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Conclusion</h3>
+        <p>HTML5 media elements make it easier to embed and control audio and video content on web pages. By using these elements and providing multiple source formats, developers can create rich multimedia experiences that are accessible across different browsers and devices.</p>
+    </section>
+</body>
+</html>

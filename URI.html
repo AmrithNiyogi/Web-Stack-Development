@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REST Web Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #333;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ol {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>REST Web Service</h1>
+        <nav>
+            <ul>
+                <li><a href="HTTP.html">Previous Topic: HTTP</a></li>
+                <li><a href="Web Services.html">Web Services</a></li>
+                <li><a href="Request Headers.html">Next Topic: Request Headers</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+      <h2>Introduction</h2>
+        <p>A URI (Uniform Resource Identifier) is a string of characters used to identify a resource either on the internet or within a network. It provides a way to access and interact with resources using various protocols and methods. URIs are fundamental to the web and are used to retrieve documents, images, and other resources from web servers.</p>
+
+        <h2>Syntax and Structure</h2>
+        <ul>
+            <li><strong>Scheme:</strong> Specifies the protocol or method used to access the resource. Common schemes include:
+                <ul>
+                    <li><code>http</code> - Hypertext Transfer Protocol</li>
+                    <li><code>https</code> - Secure Hypertext Transfer Protocol</li>
+                    <li><code>ftp</code> - File Transfer Protocol</li>
+                    <li><code>mailto</code> - Email address</li>
+                </ul>
+            </li>
+            <li><strong>Authority:</strong> Contains the domain name or IP address of the resource and optionally a port number. This part indicates the server hosting the resource. Examples include:
+                <ul>
+                    <li><code>www.example.com</code></li>
+                    <li><code>192.168.1.1:8080</code></li>
+                </ul>
+            </li>
+            <li><strong>Path:</strong> Specifies the exact location of the resource on the server. It is hierarchical and often resembles a file path. Examples include:
+                <ul>
+                    <li><code>/images/pic.jpg</code></li>
+                    <li><code>/articles/2024/07/30</code></li>
+                </ul>
+            </li>
+            <li><strong>Query:</strong> Provides additional parameters to refine the request. It starts with a <code>?</code> and includes key-value pairs separated by <code>&</code>. Examples include:
+                <ul>
+                    <li><code>?search=keyword&sort=asc</code></li>
+                    <li><code>?user=12345&status=active</code></li>
+                </ul>
+            </li>
+            <li><strong>Fragment:</strong> Identifies a specific section within the resource. It starts with a <code>#</code> and is used for in-page navigation. Examples include:
+                <ul>
+                    <li><code>#section1</code></li>
+                    <li><code>#top</code></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Example URIs</h2>
+        <p>Example URI: <code>http://www.example.com:80/path/to/resource?query=abc#section1</code></p>
+        <ul>
+            <li><strong>Scheme:</strong> <code>http</code></li>
+            <li><strong>Authority:</strong> <code>www.example.com:80</code></li>
+            <li><strong>Path:</strong> <code>/path/to/resource</code></li>
+            <li><strong>Query:</strong> <code>query=abc</code></li>
+            <li><strong>Fragment:</strong> <code>section1</code></li>
+        </ul>
+
+        <h2>URI vs URL vs URN</h2>
+        <ul>
+            <li><strong>URI:</strong> A broad term that includes both URLs and URNs. It provides a way to identify a resource without necessarily indicating how to access it.</li>
+            <li><strong>URL (Uniform Resource Locator):</strong> A specific type of URI that provides the means to locate and access a resource. It includes the scheme, authority, and path, and often includes the query and fragment.</li>
+            <li><strong>URN (Uniform Resource Name):</strong> A type of URI that provides a unique name for a resource without providing its location. It is used for persistent identifiers. Example: <code>urn:isbn:0451450523</code></li>
+        </ul>
+
+        <h2>Best Practices for Using URIs</h2>
+        <ul>
+            <li><strong>Consistency:</strong> Use a consistent naming convention and structure for URIs to ensure clarity and predictability.</li>
+            <li><strong>Descriptive:</strong> URIs should be descriptive and convey meaningful information about the resource they identify.</li>
+            <li><strong>Human-Readable:</strong> Design URIs to be human-readable and easy to understand, which aids in usability and debugging.</li>
+            <li><strong>Versioning:</strong> Include version information in URIs when evolving APIs to maintain backward compatibility. Example: <code>/api/v1/resources</code></li>
+            <li><strong>Avoid Sessions:</strong> Avoid using session IDs or user-specific data in URIs to maintain statelessness and avoid exposing sensitive information.</li>
+        </ul>
+    </section>
+</body>
+</html>

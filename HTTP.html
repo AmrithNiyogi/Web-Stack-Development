@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REST Web Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #333;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ol {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>REST Web Service</h1>
+        <nav>
+            <ul>
+
+                <li><a href="Web Services.html">Web Services</a></li>
+                <li><a href="URI.html">Next Topic: URI</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>HTTP (Hypertext Transfer Protocol)</h2>
+        <p>HTTP is a protocol used for transferring hypertext requests and information on the web. It is the foundation of data communication on the World Wide Web.</p>
+
+        <h2>Protocol</h2>
+        <p>HTTP operates on the client-server model where the client makes requests and the server provides responses. It uses TCP/IP for data transmission, ensuring reliable communication.</p>
+
+        <h2>Characteristics</h2>
+        <ul>
+            <li><strong>Stateless:</strong> Each HTTP request is independent, and the server does not store any state about the client between requests.</li>
+            <li><strong>Connectionless:</strong> HTTP is a connectionless protocol, meaning each request/response pair is handled separately without persisting the connection.</li>
+            <li><strong>Flexible:</strong> HTTP supports various data formats such as HTML, JSON, XML, and more.</li>
+        </ul>
+
+        <h2>Components</h2>
+        <ul>
+            <li><strong>Requests:</strong> Initiated by the client to ask the server for resources.</li>
+            <li><strong>Responses:</strong> Sent by the server in response to a client request.</li>
+            <li><strong>Headers:</strong> Metadata sent along with requests and responses to provide additional information.</li>
+            <li><strong>Body:</strong> Contains the main content of the request or response, such as HTML, JSON, or XML.</li>
+        </ul>
+
+        <h2>Request Methods</h2>
+        <p>HTTP defines several methods to perform actions on resources:</p>
+        <ul>
+            <li><strong>GET:</strong> Retrieves data from the server. Example: <code>GET /resource</code></li>
+            <li><strong>POST:</strong> Sends data to the server to create a new resource. Example: <code>POST /resource</code></li>
+            <li><strong>PUT:</strong> Updates an existing resource on the server. Example: <code>PUT /resource/1</code></li>
+            <li><strong>DELETE:</strong> Removes a resource from the server. Example: <code>DELETE /resource/1</code></li>
+            <li><strong>HEAD:</strong> Retrieves headers only without the body. Example: <code>HEAD /resource</code></li>
+            <li><strong>OPTIONS:</strong> Describes the communication options for the target resource. Example: <code>OPTIONS /resource</code></li>
+            <li><strong>PATCH:</strong> Partially updates a resource. Example: <code>PATCH /resource/1</code></li>
+            <li><strong>TRACE:</strong> Echoes the received request for diagnostic purposes. Example: <code>TRACE /resource</code></li>
+            <li><strong>CONNECT:</strong> Establishes a tunnel to the server, often used for SSL. Example: <code>CONNECT www.example.com:443</code></li>
+        </ul>
+
+        <h2>Response Format</h2>
+        <p>HTTP responses include:</p>
+        <ul>
+            <li><strong>Status Line:</strong> Contains the HTTP version and status code (e.g., <code>HTTP/1.1 200 OK</code>).</li>
+            <li><strong>Headers:</strong> Provide metadata about the response (e.g., <code>Content-Type: application/json</code>).</li>
+            <li><strong>Body:</strong> The main content of the response (e.g., HTML, JSON).</li>
+        </ul>
+
+        <h2>Error Codes</h2>
+        <p>Common HTTP status codes include:</p>
+        <ul>
+            <li><strong>200 OK:</strong> The request was successful.</li>
+            <li><strong>201 Created:</strong> The request was successful and a new resource was created.</li>
+            <li><strong>204 No Content:</strong> The request was successful but there is no content to return.</li>
+            <li><strong>400 Bad Request:</strong> The server could not understand the request due to invalid syntax.</li>
+            <li><strong>401 Unauthorized:</strong> Authentication is required and has failed or not provided.</li>
+            <li><strong>403 Forbidden:</strong> The server understood the request but refuses to authorize it.</li>
+            <li><strong>404 Not Found:</strong> The requested resource could not be found.</li>
+            <li><strong>500 Internal Server Error:</strong> The server encountered an unexpected condition that prevented it from fulfilling the request.</li>
+        </ul>
+
+        <h2>User Authentication in HTTP</h2>
+        <p>HTTP supports several authentication mechanisms:</p>
+        <ul>
+            <li><strong>Basic Authentication:</strong> Sends user credentials (username and password) encoded in base64. Example header: <code>Authorization: Basic base64(username:password)</code></li>
+            <li><strong>Digest Authentication:</strong> Provides a more secure method than basic authentication by using hashed credentials.</li>
+            <li><strong>Bearer Token:</strong> Uses tokens (e.g., OAuth tokens) to authenticate requests. Example header: <code>Authorization: Bearer token</code></li>
+            <li><strong>OAuth:</strong> A more advanced protocol for authorization, allowing third-party applications to access user data without exposing credentials.</li>
+        </ul>
+    </section>
+
+</body>
+</html>

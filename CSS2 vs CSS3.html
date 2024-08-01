@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS2 vs CSS3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS2 vs CSS3</h1>
+        <nav>
+            <ul>
+                <li><a href="Introduction to CSS3.html">Previous Topic: Introduction to CSS3</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Syntax and Modules</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>CSS2</th>
+                    <th>CSS3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Structure</td>
+                    <td>Monolithic Structure: Single, large specification.</td>
+                    <td>Modular Structure: Divided into multiple modules.</td>
+                </tr>
+                <tr>
+                    <td>Features</td>
+                    <td>Limited Features: Basic styling capabilities.</td>
+                    <td>Enhanced Features: New properties and capabilities.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Selectors</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>CSS2</th>
+                    <th>CSS3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Basic Selectors</td>
+                    <td>Simple selectors and combinators.</td>
+                    <td>Advanced selectors, attribute selectors, pseudo-elements, and pseudo-classes.</td>
+                </tr>
+                <tr>
+                    <td>Pseudo-Classes</td>
+                    <td>Limited pseudo-classes (e.g., :hover, :active).</td>
+                    <td>More pseudo-classes (e.g., :nth-child, :not).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Box Model</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>CSS2</th>
+                    <th>CSS3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Box Model</td>
+                    <td>Fixed box model with margin, border, padding, and content.</td>
+                    <td>Flexible box model with box-sizing property.</td>
+                </tr>
+                <tr>
+                    <td>Box-Sizing</td>
+                    <td>Not available.</td>
+                    <td>Content-box vs. Border-box.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Backgrounds and Borders</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>CSS2</th>
+                    <th>CSS3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Backgrounds</td>
+                    <td>Basic backgrounds: color, image, repeat.</td>
+                    <td>Advanced backgrounds: multiple images, size, clip, origin.</td>
+                </tr>
+                <tr>
+                    <td>Borders</td>
+                    <td>Basic border styles, widths, and colors.</td>
+                    <td>Border-radius, border-image, box-shadow.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Text Effects and Typography</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>CSS2</th>
+                    <th>CSS3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Typography</td>
+                    <td>Basic text styling properties.</td>
+                    <td>Advanced typography: @font-face, text-shadow, text-overflow.</td>
+                </tr>
+                <tr>
+                    <td>Text Effects</td>
+                    <td>No support for advanced text effects.</td>
+                    <td>New text properties: word-wrap, word-break, white-space.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Layout and Positioning</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>CSS2</th>
+                    <th>CSS3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Layout Techniques</td>
+                    <td>Basic layout techniques: static, relative, absolute, fixed positioning.</td>
+                    <td>Flexible layout: Flexbox and Grid.</td>
+                </tr>
+                <tr>
+                    <td>Positioning</td>
+                    <td>Limited to floats and clears for multi-column layouts.</td>
+                    <td>Enhanced positioning: Flexbox and Grid for aligning and distributing space.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Animations and Transitions</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>CSS2</th>
+                    <th>CSS3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Animations</td>
+                    <td>No native support.</td>
+                    <td>Built-in animations: @keyframes.</td>
+                </tr>
+                <tr>
+                    <td>Transitions</td>
+                    <td>No native support.</td>
+                    <td>Smooth transitions between property values.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Media Queries</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>CSS2</th>
+                    <th>CSS3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Responsive Design</td>
+                    <td>No support for media queries.</td>
+                    <td>Media queries for responsive, mobile-friendly designs.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Conclusion</h2>
+        <p>CSS3 represents a significant advancement over CSS2, offering a more modular, flexible, and feature-rich framework for web design. Its new selectors, layout models, background and border properties, text effects, animations, transitions, and media queries provide developers with the tools needed to create dynamic, responsive, and visually appealing web experiences. Understanding the differences between CSS2 and CSS3 is essential for leveraging the full potential of modern web development.</p>
+    </section>
+</body>
+</html>

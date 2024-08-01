@@ -1,0 +1,18 @@
+Internet and web Technologies
+Client/Server model
+Web Search Engine
+Web Crawling
+Web Indexing
+Search Engine Optimization and Limitations
+Web Services 
+Collective Intelligence 
+Mobile Web 
+Features of Web 3.0
+HTML vs HTML5
+Exploring Editors and Browsers Supported by HTML5
+New Elements
+HTML5 Semantics
+Canvas
+HTML Media 
+Introduction to CSS3
+CSS2 vs CSS3

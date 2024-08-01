@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML-RPC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #333;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        pre {
+            background: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>XML-RPC</h1>
+        <nav>
+            <ul>
+                <li><a href="REST.html">Previous Topic: REST</a></li>
+                <li><a href="Web Services.html">Web Services</a></li>
+                <li><a href="JSON-RPC.html">Next Topic: JSON-RPC</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Introduction</h2>
+        <p>XML-RPC is a remote procedure call (RPC) protocol that uses XML to encode its calls and HTTP as a transport mechanism. It enables different systems to communicate with each other over the network by calling methods on a remote server and receiving responses.</p>
+
+        <h2>Working</h2>
+        <ul>
+            <li><strong>Request:</strong> The client sends an HTTP POST request to the server with an XML payload that describes the method to be invoked and its parameters.</li>
+            <li><strong>Processing:</strong> The server processes the request, invokes the specified method, and prepares an XML response with the result.</li>
+            <li><strong>Response:</strong> The server sends the XML response back to the client, which parses it to obtain the result.</li>
+        </ul>
+
+        <h2>XML-RPC Components</h2>
+        <ul>
+            <li><strong>Client:</strong> Initiates the RPC by sending a request to the server.</li>
+            <li><strong>Server:</strong> Receives the request, processes it, and sends back a response.</li>
+            <li><strong>Method Call:</strong> The procedure that the client wants to invoke on the server.</li>
+            <li><strong>Parameters:</strong> The arguments passed to the method call, encoded in XML.</li>
+            <li><strong>Response:</strong> The result of the method call, encoded in XML.</li>
+        </ul>
+
+        <h2>Example Request and Response</h2>
+        <h3>Request</h3>
+        <pre><code>&lt;?xml version="1.0"?&gt;
+&lt;methodCall&gt;
+    &lt;methodName&gt;sample.sum&lt;/methodName&gt;
+    &lt;params&gt;
+        &lt;param&gt;
+            &lt;value&gt;&lt;int&gt;5&lt;/int&gt;&lt;/value&gt;
+        &lt;/param&gt;
+        &lt;param&gt;
+            &lt;value&gt;&lt;int&gt;3&lt;/int&gt;&lt;/value&gt;
+        &lt;/param&gt;
+    &lt;/params&gt;
+&lt;/methodCall&gt;</code></pre>
+
+        <h3>Response</h3>
+        <pre><code>&lt;?xml version="1.0"?&gt;
+&lt;methodResponse&gt;
+    &lt;params&gt;
+        &lt;param&gt;
+            &lt;value&gt;&lt;int&gt;8&lt;/int&gt;&lt;/value&gt;
+        &lt;/param&gt;
+    &lt;/params&gt;
+&lt;/methodResponse&gt;</code></pre>
+
+        <h2>Data Types</h2>
+        <ul>
+            <li><strong>int:</strong> Integer values. Example: <code>&lt;int&gt;42&lt;/int&gt;</code></li>
+            <li><strong>boolean:</strong> Boolean values. Example: <code>&lt;boolean&gt;1&lt;/boolean&gt;</code> (1 for true, 0 for false)</li>
+            <li><strong>string:</strong> String values. Example: <code>&lt;string&gt;Hello, World!&lt;/string&gt;</code></li>
+            <li><strong>double:</strong> Floating-point numbers. Example: <code>&lt;double&gt;3.14&lt;/double&gt;</code></li>
+            <li><strong>dateTime.iso8601:</strong> Date and time values. Example: <code>&lt;dateTime.iso8601&gt;2024-08-01T12:34:56&lt;/dateTime.iso8601&gt;</code></li>
+            <li><strong>base64:</strong> Base64-encoded binary data. Example: <code>&lt;base64&gt;SGVsbG8sIFdvcmxkIQ==&lt;/base64&gt;</code></li>
+            <li><strong>array:</strong> Ordered lists of values. Example: <code>&lt;array&gt;...&lt;/array&gt;</code></li>
+            <li><strong>struct:</strong> Collection of key-value pairs. Example: <code>&lt;struct&gt;...&lt;/struct&gt;</code></li>
+        </ul>
+
+        <h2>Security Considerations</h2>
+        <ul>
+            <li><strong>Data Encryption:</strong> Use SSL/TLS to encrypt the data transmitted between the client and server to prevent eavesdropping and tampering.</li>
+            <li><strong>Authentication:</strong> Implement authentication mechanisms to ensure that only authorized clients can invoke methods on the server.</li>
+            <li><strong>Input Validation:</strong> Validate all inputs on the server to prevent injection attacks and other malicious activities.</li>
+            <li><strong>Limit Method Exposure:</strong> Only expose necessary methods to the client to reduce the attack surface.</li>
+        </ul>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li><strong>Use Meaningful Method Names:</strong> Choose descriptive names for methods to make the API more understandable and easier to use.</li>
+            <li><strong>Keep Methods Simple:</strong> Design methods to perform a single task, making them easier to implement, test, and maintain.</li>
+            <li><strong>Document the API:</strong> Provide clear and comprehensive documentation for the API, including method names, parameters, data types, and examples.</li>
+            <li><strong>Handle Errors Gracefully:</strong> Implement robust error handling to provide meaningful error messages and avoid exposing sensitive information.</li>
+            <li><strong>Optimize Performance:</strong> Monitor and optimize the performance of the XML-RPC server to ensure it can handle the expected load efficiently.</li>
+        </ul>
+    </section>
+</body>
+</html>

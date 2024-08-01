@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WSDL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #333;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        pre {
+            background: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>WSDL</h1>
+        <nav>
+            <ul>
+                <li><a href="JSON-RPC.html">Previous Topic: JSON-RPC</a></li>
+                <li><a href="Web Services.html">Web Services</a></li>
+                <li><a href="UDDI.html">Next Topic: UDDI</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Introduction</h2>
+        <p>WSDL (Web Services Description Language) is an XML-based language used for describing the functionalities offered by web services. It serves as a contract between a web service provider and a client, detailing the methods available, the parameters required, and the data structures involved.</p>
+
+        <h2>WSDL Document Structure</h2>
+        <ul>
+            <li><strong>Definitions:</strong> The root element that defines the name of the web service and declares namespaces used in the document.</li>
+            <li><strong>Types:</strong> Defines the data types used by the web service using XML Schema (XSD).</li>
+            <li><strong>Message:</strong> Describes the data elements of an operation, with each message consisting of one or more parts.</li>
+            <li><strong>PortType:</strong> Defines a collection of operations supported by the web service, with each operation corresponding to a method.</li>
+            <li><strong>Binding:</strong> Specifies the protocol and data format used for each port type, such as SOAP or HTTP.</li>
+            <li><strong>Service:</strong> Groups together a set of related ports, defining where the service can be accessed.</li>
+        </ul>
+
+        <h2>Example WSDL Document</h2>
+        <pre><code>&lt;definitions name="MyService"
+    targetNamespace="http://www.example.com/myservice"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:tns="http://www.example.com/myservice"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+
+    &lt;types&gt;
+        &lt;xsd:schema&gt;
+            &lt;xsd:element name="MyRequest" type="xsd:string"/&gt;
+            &lt;xsd:element name="MyResponse" type="xsd:string"/&gt;
+        &lt;/xsd:schema&gt;
+    &lt;/types&gt;
+
+    &lt;message name="MyRequestMessage"&gt;
+        &lt;part name="parameters" element="tns:MyRequest"/&gt;
+    &lt;/message&gt;
+
+    &lt;message name="MyResponseMessage"&gt;
+        &lt;part name="parameters" element="tns:MyResponse"/&gt;
+    &lt;/message&gt;
+
+    &lt;portType name="MyPortType"&gt;
+        &lt;operation name="MyOperation"&gt;
+            &lt;input message="tns:MyRequestMessage"/&gt;
+            &lt;output message="tns:MyResponseMessage"/&gt;
+        &lt;/operation&gt;
+    &lt;/portType&gt;
+
+    &lt;binding name="MyBinding" type="tns:MyPortType"&gt;
+        &lt;soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/&gt;
+        &lt;operation name="MyOperation"&gt;
+            &lt;soap:operation soapAction="http://www.example.com/myservice/MyOperation"/&gt;
+            &lt;input&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/input&gt;
+            &lt;output&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/output&gt;
+        &lt;/operation&gt;
+    &lt;/binding&gt;
+
+    &lt;service name="MyService"&gt;
+        &lt;port name="MyPort" binding="tns:MyBinding"&gt;
+            &lt;soap:address location="http://www.example.com/myservice"/&gt;
+        &lt;/port&gt;
+    &lt;/service&gt;
+
+&lt;/definitions&gt;</code></pre>
+
+        <h2>Security Considerations</h2>
+        <ul>
+            <li><strong>Data Encryption:</strong> Use SSL/TLS to encrypt data transmitted between the client and server.</li>
+            <li><strong>Authentication:</strong> Implement authentication mechanisms, such as WS-Security, to ensure that only authorized clients can access the web service.</li>
+            <li><strong>Input Validation:</strong> Validate all inputs on the server to prevent injection attacks and other malicious activities.</li>
+            <li><strong>Access Control:</strong> Restrict access to sensitive methods and data, ensuring only authorized users can perform certain operations.</li>
+        </ul>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li><strong>Use Descriptive Names:</strong> Choose clear and descriptive names for services, methods, and parameters to make the WSDL document easier to understand.</li>
+            <li><strong>Keep it Simple:</strong> Design services to be as simple as possible, avoiding unnecessary complexity in the WSDL document.</li>
+            <li><strong>Document Thoroughly:</strong> Provide detailed documentation for each service, method, and data type, including examples of valid requests and responses.</li>
+            <li><strong>Versioning:</strong> Use versioning in your WSDL documents to manage changes and updates to the web service without breaking existing clients.</li>
+            <li><strong>Consistent Namespace Usage:</strong> Use consistent and well-defined namespaces to avoid conflicts and ensure clarity.</li>
+            <li><strong>Test Extensively:</strong> Thoroughly test the web service to ensure it meets requirements and handles edge cases appropriately.</li>
+        </ul>
+    </section>
+</body>
+</html>

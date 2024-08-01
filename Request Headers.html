@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REST Web Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #333;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ol {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>REST Web Service</h1>
+        <nav>
+            <ul>
+                <li><a href="URI.html">Previous Topic: URI</a></li>
+                <li><a href="Web Services.html">Web Services</a></li>
+                <li><a href="Cookies.html">Next Topic: Cookies</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Introduction</h2>
+        <p>Request headers are part of the HTTP request sent by the client to the server. They provide additional context about the request, such as content type, authentication details, and client preferences. Headers play a crucial role in defining how the server should handle the request and what type of response the client expects.</p>
+
+        <h2>Common Request Headers</h2>
+        <ul>
+            <li><strong>Accept:</strong> Defines the media types that the client is able to process. This header helps the server understand the types of responses that the client can handle. Example: <code>Accept: application/json, text/html</code></li>
+            <li><strong>Content-Type:</strong> Indicates the media type of the resource being sent by the client to the server. It informs the server about the format of the data in the request body. Example: <code>Content-Type: application/json</code></li>
+            <li><strong>Authorization:</strong> Contains credentials for authenticating the client to the server. Common schemes include Basic and Bearer tokens. Example: <code>Authorization: Bearer <token></code></li>
+            <li><strong>User-Agent:</strong> Provides information about the client software making the request. This header can be used to tailor responses based on the client's platform. Example: <code>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36</code></li>
+            <li><strong>Accept-Encoding:</strong> Lists the content encodings that the client can handle. This is useful for compressing response data to reduce transfer size. Example: <code>Accept-Encoding: gzip, deflate, br</code></li>
+            <li><strong>Cookie:</strong> Sends cookies from the client to the server. Cookies are often used for session management and tracking user preferences. Example: <code>Cookie: sessionId=abc123</code></li>
+            <li><strong>Host:</strong> Specifies the domain name of the server and the port number (if applicable). It is essential for routing requests to the correct server. Example: <code>Host: www.example.com</code></li>
+        </ul>
+
+        <h2>Custom Headers</h2>
+        <ul>
+            <li><strong>X-Requested-With:</strong> Commonly used in AJAX requests to identify the request as being made with JavaScript. This can help prevent CSRF attacks. Example: <code>X-Requested-With: XMLHttpRequest</code></li>
+            <li><strong>Cache-Control:</strong> Directs caching mechanisms in both requests and responses. It allows clients and servers to specify caching policies. Example: <code>Cache-Control: no-cache</code></li>
+            <li><strong>Referer:</strong> Indicates the address of the previous web page from which a link to the currently requested page was followed. Example: <code>Referer: http://www.example.com/previous-page</code></li>
+            <li><strong>Accept-Language:</strong> Specifies the preferred languages for the response. The server can use this to send content in the client's preferred language. Example: <code>Accept-Language: en-US,en;q=0.5</code></li>
+            <li><strong>Connection:</strong> Controls whether the network connection stays open after the current transaction finishes. Example: <code>Connection: keep-alive</code></li>
+        </ul>
+
+        <h2>Best Practices for Using Request Headers</h2>
+        <ul>
+            <li><strong>Be Explicit:</strong> Use specific headers to clearly define the expected response format and other request parameters.</li>
+            <li><strong>Secure Sensitive Data:</strong> Avoid including sensitive information in headers. Use secure methods like HTTPS to protect data in transit.</li>
+            <li><strong>Consistent Naming:</strong> Follow standard naming conventions and avoid using non-standard headers unless absolutely necessary.</li>
+            <li><strong>Manage Cookies:</strong> Be cautious with cookie handling and ensure they are used securely, especially in relation to authentication and session management.</li>
+            <li><strong>Keep Headers Lightweight:</strong> Avoid adding unnecessary headers to reduce overhead and improve performance.</li>
+        </ul>
+    </section>
+</body>
+</html>
