@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to CSS3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Introduction to CSS3</h1>
+        <nav>
+            <ul>
+                <li><a href="HTML Media.html">Previous Topic: HTML5 Media</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="CSS2 vs CSS3.html">Next Topic: CSS2 vs CSS3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Introduction to CSS3</h2>
+        <p>CSS3 (Cascading Style Sheets Level 3) is the latest evolution of the Cascading Style Sheets language, bringing a wide array of new features and capabilities to enhance the design and functionality of web pages. This introduction covers the fundamental aspects of CSS3 and highlights the key improvements over its predecessor, CSS2.</p>
+
+        <h3>Modular Structure</h3>
+        <p>One of the most significant changes in CSS3 is its modular structure. Unlike CSS2, which was a single large specification, CSS3 is divided into several independent modules, each focusing on a particular aspect of the language. This modular approach allows for faster development, easier maintenance, and more manageable updates. Key modules include:</p>
+        <ul>
+            <li><strong>Selectors Level 3:</strong> Defines new and advanced selectors.</li>
+            <li><strong>Box Model:</strong> Enhances the box model with new properties.</li>
+            <li><strong>Backgrounds and Borders:</strong> Adds capabilities like multiple backgrounds and border images.</li>
+            <li><strong>Text Effects:</strong> Introduces text shadows, word wrapping, and more.</li>
+            <li><strong>2D/3D Transformations:</strong> Enables rotation, scaling, and translation of elements.</li>
+            <li><strong>Transitions and Animations:</strong> Provides smooth transitions and complex animations.</li>
+            <li><strong>Flexible Box Layout (Flexbox):</strong> A powerful layout model for aligning and distributing space.</li>
+        </ul>
+
+        <h3>New Selectors</h3>
+        <p>CSS3 introduces several new selectors that enhance the ability to target specific elements within a document. These include:</p>
+        <ul>
+            <li><strong>Attribute Selectors:</strong> Style elements based on the presence or value of attributes. For example, <code>[type="text"]</code> targets input elements with type="text".</li>
+            <li><strong>Pseudo-classes:</strong> Target elements in specific states or based on their position in the document tree. Examples include <code>:nth-child(n)</code> to style the nth child of a parent element and <code>:not(selector)</code> to style elements not matching the selector.</li>
+            <li><strong>Pseudo-elements:</strong> Style specific parts of an element. Examples include <code>::before</code> and <code>::after</code> to insert content before or after the element's content.</li>
+        </ul>
+
+        <h3>Box Model Enhancements</h3>
+        <p>CSS3 enhances the traditional box model with the <code>box-sizing</code> property, which allows developers to control how the width and height of an element are calculated. This property can take two values:</p>
+        <ul>
+            <li><code>content-box:</code> The default value where width and height include only the content, not padding or border.</li>
+            <li><code>border-box:</code> Width and height include content, padding, and border, making it easier to size elements consistently.</li>
+        </ul>
+
+        <h3>Backgrounds and Borders</h3>
+        <p>CSS3 introduces several enhancements to background and border properties, allowing for more creative and flexible designs:</p>
+        <ul>
+            <li><strong>Multiple Backgrounds:</strong> Apply more than one background image to an element using a comma-separated list.</li>
+            <li><strong>Gradients:</strong> Create gradient backgrounds without using images. CSS3 supports linear and radial gradients.</li>
+            <li><strong>Background-size:</strong> Control the size of background images, allowing them to cover the element or fit within it.</li>
+            <li><strong>Border Images:</strong> Use images for borders, providing greater design flexibility.</li>
+            <li><strong>Border Radius:</strong> Create rounded corners on elements with the <code>border-radius</code> property.</li>
+        </ul>
+
+        <h3>Text Effects</h3>
+        <p>CSS3 brings several new text properties that enhance the ability to style and format text:</p>
+        <ul>
+            <li><strong>Text Shadow:</strong> Add shadow effects to text using the <code>text-shadow</code> property. For example: <code>text-shadow: 2px 2px 5px gray;</code>.</li>
+            <li><strong>Text Overflow:</strong> Handle overflowed text with <code>text-overflow</code>. Common values include <code>ellipsis</code> to show "..." when text overflows.</li>
+            <li><strong>Word Wrap:</strong> Control word breaking and wrapping using the <code>word-wrap</code> property, useful for handling long words in confined spaces.</li>
+        </ul>
+
+        <h3>2D/3D Transformations</h3>
+        <p>CSS3 introduces powerful transformation capabilities, allowing elements to be translated, rotated, scaled, and skewed. These transformations can be applied in both two-dimensional (2D) and three-dimensional (3D) spaces:</p>
+        <ul>
+            <li><strong>2D Transforms:</strong> Properties like <code>transform: rotate(45deg);</code> and <code>transform: scale(1.5);</code> enable rotation and scaling of elements.</li>
+            <li><strong>3D Transforms:</strong> Properties like <code>transform: rotateX(45deg);</code> and <code>transform: perspective(500px);</code> enable 3D effects.</li>
+        </ul>
+
+        <h3>Transitions and Animations</h3>
+        <p>CSS3 provides smooth transitions and complex animations to enhance the interactivity of web pages:</p>
+        <ul>
+            <li><strong>Transitions:</strong> Enable smooth changes from one style to another. For example, to transition the background color over 0.5 seconds: <code>transition: background-color 0.5s ease;</code>.</li>
+            <li><strong>Animations:</strong> Allow more complex animations using keyframes. Define the animation with <code>@keyframes</code> and apply it with <code>animation</code> properties. Example:
+                <pre>
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+div {
+    animation-name: example;
+    animation-duration: 4s;
+}
+                </pre>
+            </li>
+        </ul>
+
+        <h3>Flexible Box Layout (Flexbox)</h3>
+        <p>CSS3 introduces the Flexible Box Layout, or Flexbox, which provides a more efficient way to layout, align, and distribute space among items in a container:</p>
+        <ul>
+            <li><strong>Flex Container:</strong> The parent element where the <code>display: flex;</code> property is applied.</li>
+            <li><strong>Flex Items:</strong> The children of a flex container. Flex properties like <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code> control their behavior.</li>
+            <li><strong>Alignment:</strong> Properties like <code>justify-content</code>, <code>align-items</code>, and <code>align-self</code> control the alignment of flex items.</li>
+        </ul>
+
+        <h3>Grid Layout</h3>
+        <p>The CSS Grid Layout is a two-dimensional layout system introduced in CSS3, providing extensive control over the placement and alignment of elements in rows and columns:</p>
+        <ul>
+            <li><strong>Grid Container:</strong> The parent element where the <code>display: grid;</code> property is applied.</li>
+            <li><strong>Grid Items:</strong> The children of a grid container. Properties like <code>grid-template-rows</code>, <code>grid-template-columns</code>, and <code>grid-area</code> control their placement.</li>
+            <li><strong>Grid Lines:</strong> Define the boundaries of grid items, allowing precise placement and alignment.</li>
+        </ul>
+
+        <h3>Media Queries</h3>
+        <p>Media queries are a key feature of CSS3 that allow for responsive design. They enable different styles to be applied based on the characteristics of the user's device, such as screen width, height, orientation, and resolution. For example:</p>
+        <pre>
+@media screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+}
+        </pre>
+        <p>This query applies the styles within the block only if the screen width is 600 pixels or less.</p>
+
+        <h3>Conclusion</h3>
+        <p>CSS3 has significantly advanced the capabilities of web design, providing a wide range of new features and enhancements that make it easier to create visually appealing and highly interactive web pages. Understanding and leveraging these features allows developers to build more dynamic and responsive websites.</p>
+    </section>
+</body>
+</html>

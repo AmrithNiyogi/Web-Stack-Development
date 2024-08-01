@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #333;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ol {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cookies</h1>
+        <nav>
+            <ul>
+                <li><a href="Request Headers.html">Previous Topic: Request Headers</a></li>
+                <li><a href="Web Services.html">Web Services</a></li>
+                <li><a href="SSL.html">Next Topic: SSL</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Introduction</h2>
+        <p>Cookies are small pieces of data sent from the server and stored on the client's browser. They are used to maintain state and store user-specific information between requests. Cookies play a crucial role in web development by enabling features like user sessions, preferences, and tracking.</p>
+
+        <h2>Setting Cookies</h2>
+        <ul>
+            <li><strong>Set-Cookie Header:</strong> Used by the server to send cookies to the client. The header may include various attributes to control the cookie's behavior. Example: <code>Set-Cookie: sessionId=abc123; Path=/; Expires=Wed, 01 Aug 2024 00:00:00 GMT; Secure; HttpOnly</code></li>
+        </ul>
+
+        <h2>Cookie Attributes</h2>
+        <ul>
+            <li><strong>Name:</strong> The name of the cookie, used to identify it. Example: <code>sessionId</code></li>
+            <li><strong>Value:</strong> The data associated with the name, stored as a string. Example: <code>abc123</code></li>
+            <li><strong>Domain:</strong> Specifies which domain can access the cookie. It can be set to a specific domain or left as the default. Example: <code>Domain=example.com</code></li>
+            <li><strong>Path:</strong> Specifies the URL path that must exist in the requested URL for the browser to send the cookie. Example: <code>Path=/</code> means the cookie is sent with all requests to the domain.</li>
+            <li><strong>Expires/Max-Age:</strong> Defines the expiration date or duration of the cookie. <code>Expires</code> sets a specific date and time, while <code>Max-Age</code> specifies the number of seconds until expiration. Example: <code>Expires=Wed, 01 Aug 2024 00:00:00 GMT</code> or <code>Max-Age=3600</code> (1 hour)</li>
+            <li><strong>Secure:</strong> Ensures that the cookie is only sent over HTTPS, enhancing security. Example: <code>Secure</code></li>
+            <li><strong>HttpOnly:</strong> Prevents JavaScript from accessing the cookie, reducing the risk of cross-site scripting (XSS) attacks. Example: <code>HttpOnly</code></li>
+            <li><strong>SameSite:</strong> Controls whether a cookie is sent with cross-site requests. Values can be <code>Strict</code>, <code>Lax</code>, or <code>None</code>. Example: <code>SameSite=Lax</code></li>
+        </ul>
+
+        <h2>Example Cookie Header</h2>
+        <p>Example: <code>Set-Cookie: theme=light; Domain=example.com; Path=/; Expires=Wed, 01 Aug 2024 00:00:00 GMT; Secure; HttpOnly; SameSite=Lax</code></p>
+
+        <h2>Working with Cookies</h2>
+        <ul>
+            <li><strong>Creating Cookies:</strong> Cookies are created by the server using the <code>Set-Cookie</code> header. The client stores the cookie and sends it back to the server with each subsequent request to the same domain.</li>
+            <li><strong>Reading Cookies:</strong> Cookies are read by the server from the <code>Cookie</code> header in HTTP requests. Example: <code>Cookie: sessionId=abc123; theme=light</code></li>
+            <li><strong>Deleting Cookies:</strong> Cookies can be deleted by setting their expiration date to a past date. Example: <code>Set-Cookie: sessionId=; Expires=Thu, 01 Jan 1970 00:00:00 GMT</code></li>
+        </ul>
+
+        <h2>Security Considerations</h2>
+        <ul>
+            <li><strong>Secure Attribute:</strong> Always use the <code>Secure</code> attribute for cookies containing sensitive information to ensure they are only transmitted over HTTPS.</li>
+            <li><strong>HttpOnly Attribute:</strong> Use the <code>HttpOnly</code> attribute to protect cookies from being accessed via JavaScript, mitigating XSS attacks.</li>
+            <li><strong>SameSite Attribute:</strong> Implement <code>SameSite</code> to prevent cross-site request forgery (CSRF) attacks. Set it to <code>Strict</code> or <code>Lax</code> as needed.</li>
+            <li><strong>Regular Review:</strong> Periodically review and update cookie policies and attributes to address emerging security threats.</li>
+        </ul>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li><strong>Minimize Cookie Size:</strong> Keep cookies small to reduce overhead and improve performance. Avoid storing large amounts of data in cookies.</li>
+            <li><strong>Use Secure Cookies:</strong> Always use the <code>Secure</code> and <code>HttpOnly</code> attributes for cookies containing sensitive data.</li>
+            <li><strong>Implement Proper Expiration:</strong> Set appropriate expiration times for cookies to avoid issues with stale or obsolete cookies.</li>
+            <li><strong>Monitor and Audit:</strong> Regularly audit cookies for compliance with security policies and regulatory requirements.</li>
+        </ul>
+    </section>
+</body>
+</html>

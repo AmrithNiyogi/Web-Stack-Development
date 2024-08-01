@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Crawling</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Web Crawling</h1>
+        <nav>
+            <ul>
+                <li><a href="Web Search Engine.html">Previous Topic: Web Search Engine</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Web Indexing.html">Next Topic: Web Indexing</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>What is Web Crawling?</h2>
+        <p>Web crawling, also known as web scraping or spidering, is the automated process of browsing the web in a methodical and automated manner. The primary purpose of web crawling is to index the content of websites across the Internet so that it can be retrieved and analyzed. This process is fundamental for search engines to provide relevant search results to users.</p>
+
+        <h3>How Web Crawlers Work</h3>
+        <p>Web crawlers, also known as spiders or bots, start by fetching a list of URLs from a queue. They then download the content of these URLs and extract all hyperlinks within the page. These hyperlinks are added to the queue, and the process repeats. Here are the key steps involved in web crawling:</p>
+        <ol>
+            <li><strong>Seed URLs:</strong> The process begins with a list of initial URLs, known as seed URLs.</li>
+            <li><strong>Fetching:</strong> The crawler sends HTTP requests to fetch the content of these URLs.</li>
+            <li><strong>Parsing:</strong> The fetched content is parsed to extract useful information, including hyperlinks.</li>
+            <li><strong>Queueing:</strong> Extracted hyperlinks are added to the queue for subsequent crawling.</li>
+            <li><strong>Revisiting:</strong> Pages are revisited periodically to check for updates and changes.</li>
+        </ol>
+
+        <h3>Types of Web Crawlers</h3>
+        <p>There are various types of web crawlers, each serving different purposes. Some of the common types include:</p>
+        <ul>
+            <li><strong>General Crawlers:</strong> Used by search engines to index the web comprehensively.</li>
+            <li><strong>Focused Crawlers:</strong> Target specific types of content or topics, ignoring unrelated pages.</li>
+            <li><strong>Incremental Crawlers:</strong> Only revisit pages that have changed since the last crawl, saving resources.</li>
+            <li><strong>Deep Web Crawlers:</strong> Designed to access and index content that is not easily accessible through standard crawling, such as databases and dynamic content.</li>
+        </ul>
+
+        <h3>Challenges in Web Crawling</h3>
+        <p>Web crawling is a complex task with several challenges, including:</p>
+        <ul>
+            <li><strong>Scalability:</strong> The vast size of the web requires efficient algorithms and infrastructure to crawl and index content at scale.</li>
+            <li><strong>Politeness:</strong> Crawlers must respect the <code>robots.txt</code> file and avoid overwhelming servers with too many requests.</li>
+            <li><strong>Duplicate Content:</strong> Handling duplicate content to ensure that the index is clean and free of redundant information.</li>
+            <li><strong>Dynamic Content:</strong> Crawling content generated dynamically through JavaScript and other client-side technologies.</li>
+            <li><strong>Legal and Ethical Considerations:</strong> Ensuring that crawling practices comply with legal regulations and respect user privacy.</li>
+        </ul>
+
+        <h3>Robots.txt and Sitemap.xml</h3>
+        <p>Two important files that help control web crawling are <code>robots.txt</code> and <code>sitemap.xml</code>:</p>
+        <ul>
+            <li><strong>Robots.txt:</strong> A file that webmasters create to instruct web crawlers on which pages to crawl and which to avoid. For example:
+                <pre>
+User-agent: *
+Disallow: /private/
+                </pre>
+            </li>
+            <li><strong>Sitemap.xml:</strong> An XML file that lists all the URLs of a website that are available for crawling, helping crawlers discover content more efficiently. For example:
+                <pre>
+&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
+    &lt;url&gt;
+        &lt;loc&gt;http://example.com/page1&lt;/loc&gt;
+        &lt;lastmod&gt;2024-01-01&lt;/lastmod&gt;
+    &lt;/url&gt;
+&lt;/urlset&gt;
+                </pre>
+            </li>
+        </ul>
+
+        <h3>Applications of Web Crawling</h3>
+        <p>Web crawling has numerous applications, including:</p>
+        <ul>
+            <li><strong>Search Engines:</strong> Indexing web content to provide relevant search results.</li>
+            <li><strong>Data Mining:</strong> Extracting large amounts of data for analysis and research.</li>
+            <li><strong>Price Comparison:</strong> Aggregating product prices from various e-commerce websites for comparison.</li>
+            <li><strong>Content Aggregation:</strong> Collecting and presenting content from multiple sources in one place.</li>
+            <li><strong>Market Research:</strong> Analyzing trends, competitors, and customer sentiment across the web.</li>
+        </ul>
+
+        <h3>Architecture of a Web Crawler</h3>
+        <p>The architecture of a web crawler typically includes the following components:</p>
+        <ul>
+            <li><strong>URL Frontier:</strong> A queue of URLs to be crawled. This can be managed as a priority queue to optimize the order of crawling.</li>
+            <li><strong>Fetcher:</strong> A component responsible for retrieving the content of web pages from the internet.</li>
+            <li><strong>Parser:</strong> A component that extracts useful information from the fetched web pages, such as links to other pages and metadata.</li>
+            <li><strong>Link Extractor:</strong> Extracts URLs from the fetched pages and adds them to the URL frontier.</li>
+            <li><strong>Content Storage:</strong> A system for storing the fetched content, which can be a database or a file system.</li>
+            <li><strong>Indexer:</strong> Processes the content and creates an index for efficient search and retrieval.</li>
+            <li><strong>Scheduler:</strong> Manages the order and timing of fetching URLs, ensuring efficient and respectful crawling of websites.</li>
+        </ul>
+        <img src="Crawler_Architecture.png" alt="Web Crawler Architecture" class="flowchart">
+
+        <h3>Sequential Crawler</h3>
+        <p>A sequential crawler is a simple type of web crawler that processes one URL at a time in a sequential manner. While this approach is easy to implement, it is not efficient for large-scale crawling due to its slow speed.</p>
+        <p>The flowchart below illustrates the process of a sequential web crawler:</p>
+
+        <h3>Flowchart: Sequential Crawler</h3>
+          <img src="Sequential Crawler.png" alt="Sequential Crawler" class="flowchart">
+        <ol>
+            <li>Start</li>
+            <li>Initialize URL frontier with seed URLs</li>
+            <li>While URL frontier is not empty:
+                <ul>
+                    <li>Fetch URL from frontier</li>
+                    <li>Download web page content</li>
+                    <li>Parse web page content</li>
+                    <li>Extract links and add to frontier</li>
+                    <li>Store web page content</li>
+                </ul>
+            </li>
+            <li>End</li>
+        </ol>
+
+        <h3>Factors Affecting Web Crawling</h3>
+        <p>Several factors can impact the efficiency and effectiveness of web crawling:</p>
+        <ul>
+            <li><strong>Crawl Depth:</strong> The number of links or levels a crawler follows from the initial seed URLs. Deeper crawls may gather more information but require more resources.</li>
+            <li><strong>Crawl Frequency:</strong> How often a crawler visits and re-crawls web pages. Frequent crawling can ensure up-to-date content but may strain server resources.</li>
+            <li><strong>Robots.txt:</strong> This file on websites dictates what parts of the site a crawler can or cannot access. It helps in respecting the site's crawl preferences.</li>
+            <li><strong>Server Load:</strong> The capacity and response time of the web server being crawled. High server load can slow down crawling and affect performance.</li>
+            <li><strong>URL Structure:</strong> Clear and consistent URL structures can help crawlers navigate and index a website more efficiently.</li>
+            <li><strong>Content Duplication:</strong> Duplicate content can waste crawl resources and affect indexing efficiency.</li>
+            <li><strong>Dynamic Content:</strong> Content generated dynamically through JavaScript can be more challenging for crawlers to process compared to static content.</li>
+            <li><strong>Link Quality:</strong> The number and quality of inbound and outbound links affect how effectively a crawler can discover new pages.</li>
+        </ul>
+
+        <h3>Conclusion</h3>
+        <p>Web crawling is an essential technology for navigating and indexing the vast content available on the Internet. Despite its challenges, it enables numerous applications that benefit users and businesses alike. Understanding the principles and techniques of web crawling is crucial for anyone involved in web development, data analysis, or search engine optimization.</p>
+    </section>
+</body>
+</html>

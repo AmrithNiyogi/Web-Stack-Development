@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas in HTML5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #333;
+        }
+        canvas {
+            border: 1px solid #ccc;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Canvas in HTML5</h1>
+        <nav>
+            <ul>
+                <li><a href="HTML5 Semantics.html">Previous Topic: HTML5 Semantics</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="HTML Media.html">Next Topic: HTML5 Media</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Introduction to Canvas in HTML5</h2>
+        <p>The <code>&lt;canvas&gt;</code> element in HTML5 is used to draw graphics on a web page using JavaScript. It provides a resolution-dependent bitmap canvas, which can be used to render graphs, game graphics, and other visual images on the fly.</p>
+
+        <h3>Basic Usage</h3>
+        <p>The <code>&lt;canvas&gt;</code> element itself is just a container for the graphics; you must use JavaScript to actually draw the graphics.</p>
+        <pre><code>&lt;canvas id="myCanvas" width="500" height="300"&gt;
+  Your browser does not support the canvas element.
+&lt;/canvas&gt;
+
+&lt;script&gt;
+  var canvas = document.getElementById('myCanvas');
+  var context = canvas.getContext('2d');
+  context.fillStyle = '#FF0000';
+  context.fillRect(0, 0, 150, 75);
+&lt;/script&gt;</code></pre>
+
+        <h3>Canvas Context</h3>
+        <p>The <code>getContext()</code> method returns an object that provides methods and properties for drawing on the canvas. The "2d" context allows for two-dimensional drawing, while "webgl" allows for three-dimensional drawing.</p>
+
+        <h3>Drawing Shapes</h3>
+        <p>Canvas provides methods for drawing shapes, including rectangles, circles, and paths:</p>
+        <ul>
+            <li><code>fillRect(x, y, width, height):</code> Draws a filled rectangle.</li>
+            <li><code>strokeRect(x, y, width, height):</code> Draws a rectangular outline.</li>
+            <li><code>clearRect(x, y, width, height):</code> Clears the specified rectangular area.</li>
+            <li><code>beginPath():</code> Begins a new path.</li>
+            <li><code>arc(x, y, radius, startAngle, endAngle, anticlockwise):</code> Draws a circle or arc.</li>
+            <li><code>lineTo(x, y):</code> Draws a line from the current drawing position to the specified position.</li>
+            <li><code>moveTo(x, y):</code> Moves the path to the specified point in the canvas, without creating a line.</li>
+            <li><code>stroke():</code> Draws the outline of the current path.</li>
+            <li><code>fill():</code> Fills the current path.</li>
+        </ul>
+
+        <h3>Drawing Text</h3>
+        <p>Canvas provides methods for rendering text:</p>
+        <ul>
+            <li><code>fillText(text, x, y):</code> Draws filled text at the specified coordinates.</li>
+            <li><code>strokeText(text, x, y):</code> Draws text outlines at the specified coordinates.</li>
+        </ul>
+        <pre><code>var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+context.font = '30px Arial';
+context.fillText('Hello World', 10, 50);
+context.strokeText('Hello World', 10, 100);</code></pre>
+
+        <h3>Gradients and Patterns</h3>
+        <p>Canvas supports gradients and patterns for more complex drawings:</p>
+        <ul>
+            <li><code>createLinearGradient(x0, y0, x1, y1):</code> Creates a linear gradient.</li>
+            <li><code>createRadialGradient(x0, y0, r0, x1, y1, r1):</code> Creates a radial gradient.</li>
+            <li><code>createPattern(image, repetition):</code> Creates a pattern using the specified image.</li>
+        </ul>
+
+        <h3>Advanced Drawing</h3>
+        <p>Canvas allows for more advanced drawing techniques, including transformations and image manipulation:</p>
+        <ul>
+            <li><code>rotate(angle):</code> Rotates the canvas around the current origin.</li>
+            <li><code>scale(x, y):</code> Scales the canvas units by the specified factors.</li>
+            <li><code>translate(x, y):</code> Moves the canvas and its origin on the grid.</li>
+            <li><code>drawImage(image, dx, dy):</code> Draws an image onto the canvas.</li>
+        </ul>
+
+        <h3>Example: Drawing a Circle</h3>
+        <p>Here is an example of how to draw a simple circle on the canvas:</p>
+        <pre><code>&lt;canvas id="circleCanvas" width="200" height="200"&gt;&lt;/canvas&gt;
+
+&lt;script&gt;
+  var canvas = document.getElementById('circleCanvas');
+  var context = canvas.getContext('2d');
+  context.beginPath();
+  context.arc(100, 100, 50, 0, 2 * Math.PI);
+  context.stroke();
+&lt;/script&gt;</code></pre>
+
+        <h3>Conclusion</h3>
+        <p>The <code>&lt;canvas&gt;</code> element in HTML5 provides a powerful and flexible way to draw graphics directly in the browser. With a wide range of methods and properties, developers can create dynamic and interactive graphics for games, data visualization, and other applications.</p>
+    </section>
+</body>
+</html>

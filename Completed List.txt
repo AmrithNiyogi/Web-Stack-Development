@@ -1,0 +1,36 @@
+1.Client-Server Model - done
+2.Web Search Engine - done
+3.Web Crawling - done
+4.Web Indexing - done
+5.Search Engine Optimization - done
+6.Web Services - done
+7.Collective Intelligence - done
+8.Mobile Web - done
+9.Features of Web 3.0 - done
+10.HTML vs HTML5 - done
+11.Exploring Editors and Browsers Supported by HTML5 - done
+12.New Elements in HTML5 - done
+13.HTML5 Semantics - done
+14.Canvas in HTML5 - done
+15.HTML5 Media - done
+16.Introduction to CSS3 - done
+17.CSS2 vs CSS3 - done
+
+-----------------------------------------
+1. HTTPS - done
+2. URIs - done
+3. Request headers - done
+4. Cookies - done
+5. SSL - done
+6. JSON - done
+
+-----------------------------------------
+1.SoAP - done
+2.REST - done
+3.XML-RPC - done
+4.JSON-RPC - done
+5.WSDL - done
+6.UDDI - done
+7.GraphQL - done
+8.gRPC - done
+9.OData - done
